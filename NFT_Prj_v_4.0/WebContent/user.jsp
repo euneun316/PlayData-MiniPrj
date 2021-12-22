@@ -71,7 +71,7 @@
 			<!-- Article main content -->
 			<div class="col-sm-12 maincontent">
 
-				<h1><%=uName %>님의 활동 이력입니다.</h1>
+				<h1><%=uName %>님의 거래 활동 이력입니다.</h1>
 				<br>
 				<br>
 				<h3>
