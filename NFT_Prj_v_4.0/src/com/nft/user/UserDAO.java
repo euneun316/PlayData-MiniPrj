@@ -115,8 +115,7 @@ public class UserDAO {
 	
 	// 유저 삭제기능
 	public int userDelete(int uNo) {
-	  	String sqlDelete = "DELETE FROM nftUserTbl\n" + 
-	  						"WHERE uNo = ?";
+	  	String sqlDelete = "DELETE FROM nftUserTbl WHERE uNo = ?";
 	  	try {
 			conn = DbUtil.getConnection();
 			pstmt = conn.prepareStatement(sqlDelete);
@@ -132,6 +131,7 @@ public class UserDAO {
 		}
 		return 0; //실패
 	}
+	
 	
 	// uId로 uNo 가져오기 메소드
 	public int getUserNo(String uId) {
