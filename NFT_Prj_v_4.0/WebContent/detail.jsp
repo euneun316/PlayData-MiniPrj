@@ -101,7 +101,7 @@
 										<%}%>
 									</div>
 								<!--  <form action="./product/buyProductAction.jsp"> -->	
-									<form action="./">
+									<form method = "post" action="buyProductContoller">
 										<!--클릭한 상품의 판매자 정보-->
 										<%int pSellerNo = (Integer) session.getAttribute("pSellerNo"); %>
 										
