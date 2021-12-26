@@ -1,5 +1,5 @@
 -- DB Name : nftDB
-	-- DB »ı¼º / nftDB --
+	-- DB ìƒì„± / nftDB --
 	CREATE SCHEMA IF NOT EXISTS `nftDB` DEFAULT CHARACTER SET utf8;
 	CREATE DATABASE nftDB;
 	USE nftDB;
@@ -7,8 +7,8 @@
 	DROP DATABASE nftDB;
 -- ---------------------------------------------------------
 
--- TABLE »ı¼º --
-	-- Ä«Å×°í¸® Å×ÀÌºí nftCategoryTbl --
+-- TABLE ìƒì„± --
+	-- ì¹´í…Œê³ ë¦¬ í…Œì´ë¸” nftCategoryTbl --
 	CREATE TABLE IF NOT EXISTS nftCategoryTbl(
 		cNo int ,
 		cName Varchar(10) NOT NULL UNIQUE,
@@ -21,7 +21,7 @@
 	DROP TABLE nftCategoryTbl;
 	
 	
-	-- È¸¿ø °ü¸® Å×ÀÌºí nftUserTbl -- 
+	-- íšŒì› ê´€ë¦¬ í…Œì´ë¸” nftUserTbl -- 
 	CREATE TABLE IF NOT EXISTS nftUserTbl(
 		uNo int AUTO_INCREMENT ,
 		uName varchar(10) NOT NULL ,
@@ -45,7 +45,7 @@
 	DROP TABLE nftUserTbl;
 	
 	
-	-- »óÇ° °ü¸® Å×ÀÌºí nftProductTbl --
+	-- ìƒí’ˆ ê´€ë¦¬ í…Œì´ë¸” nftProductTbl --
 	CREATE TABLE IF NOT EXISTS nftProductTbl(
 		pNo int AUTO_INCREMENT,
 		uSellerNo int NOT NULL ,
@@ -65,10 +65,10 @@
 		CONSTRAINT nftProductTbl_pNft_uk UNIQUE(pNft),
 		
 		CONSTRAINT nftProductTbl_uSellerNo_nftUserTbl_fk FOREIGN KEY (uSellerNo) 
-		REFERENCES nftUserTbl(uNo), #ÆÇ¸ÅÀÚ È¸¿ø¹øÈ£
+		REFERENCES nftUserTbl(uNo), #íŒë§¤ì íšŒì›ë²ˆí˜¸
 		
 		CONSTRAINT nftProductTbl_uNo_nftCategoryTbl_fk FOREIGN KEY (cNo) 
-		REFERENCES nftCategoryTbl(cNo) #Ä«Å×°í¸® ¹øÈ£
+		REFERENCES nftCategoryTbl(cNo) #ì¹´í…Œê³ ë¦¬ ë²ˆí˜¸
 	);
 	
 	SELECT * FROM nftProductTbl;
@@ -76,7 +76,7 @@
 	DROP TABLE nftProductTbl;
 	
 	
-	-- »óÇ° °Å·¡ Á¤º¸ Å×ÀÌºí nftDealTbl --
+	-- ìƒí’ˆ ê±°ë˜ ì •ë³´ í…Œì´ë¸” nftDealTbl --
 	CREATE TABLE IF NOT EXISTS nftDealTbl(
 		dealNo int AUTO_INCREMENT ,
 		uBuyerNo int NOT NULL ,
@@ -85,10 +85,10 @@
 		CONSTRAINT nftDealTbl_dealNo PRIMARY KEY(dealNo),
 		
 		CONSTRAINT nftDealTbl_uBuyerNo_nftUserTbl_fk FOREIGN KEY (uBuyerNo) 
-		REFERENCES nftUserTbl(uNo), #±¸¸ÅÀÚ È¸¿ø ¹øÈ£
+		REFERENCES nftUserTbl(uNo), #êµ¬ë§¤ì íšŒì› ë²ˆí˜¸
 		
 		CONSTRAINT nftDealTbl_productNo_nftProductTbl_fk FOREIGN KEY (productNo) 
-		REFERENCES nftProductTbl(pNo) #»óÇ° ¹øÈ£
+		REFERENCES nftProductTbl(pNo) #ìƒí’ˆ ë²ˆí˜¸
 	
 	);
 	
