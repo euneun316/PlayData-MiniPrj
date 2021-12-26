@@ -21,7 +21,7 @@ MVC 패턴의 Front & Back End System 구축
 
 </br>
 
-### 💡 기술 스택(tech stack)
+### 💡 개발 환경 & 기술 스택
 
 <p>
   
